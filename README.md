@@ -6,7 +6,7 @@
 - 🤖 **CodeBERT embeddings**
 - 🧠 **Vector similarity search with ChromaDB**
 
-The goal of this project is to build a smart code auditing system that can analyze Python code, identify risky patterns, and suggest possible fixes.
+Its goal is to intelligently analyze Python code, identify risky patterns, and suggest possible fixes to improve code quality and security. 🚀
 
 ---
 
@@ -16,36 +16,36 @@ The goal of this project is to build a smart code auditing system that can analy
 Detects common Python code issues such as:
 
 - ⚠️ Unsafe `eval()` usage
-- ⚠️ Bare `except:` blocks
-- ⚠️ Possible infinite loops like `while True`
+- 🚫 Bare `except:` blocks
+- ♾️ Possible infinite loops like `while True`
 
 ### 🤖 Code Embedding with CodeBERT
 Uses **Microsoft CodeBERT** to convert source code into semantic vector embeddings.
 
-This allows the system to understand code by meaning, not just exact text.
+This helps the system understand code by **meaning**, not just by exact text. 🧩
 
 ### 🧠 Bug Pattern Search with ChromaDB
 Stores known buggy code patterns in a vector database and searches for similar issues in new code.
 
 This helps detect:
 
-- similar vulnerabilities
-- repeated bad coding practices
-- known risky code structures
+- 🐞 Similar vulnerabilities
+- 🔁 Repeated bad coding practices
+- 🚨 Known risky code structures
 
 ---
 
 ## 🏗️ Project Architecture
 
 ```text
-Python Code
+📝 Python Code
     ↓
-AST Parser
+🌳 AST Parser
     ↓
-Rule-Based Bug Detector
+🔍 Rule-Based Bug Detector
     ↓
-CodeBERT Embedding Generator
+🤖 CodeBERT Embedding Generator
     ↓
-ChromaDB Vector Search
+🧠 ChromaDB Vector Search
     ↓
-Bug Matches + Suggested Fixes
+🐞 Bug Matches + 🛠️ Suggested Fixes
