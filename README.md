@@ -1,118 +1,98 @@
-🚀 SmartCode Auditor: AI-Driven Bug Detection & Remediation
+# 🛡️ **SmartCode Auditor: AI-Driven Bug Detection & Remediation**
 
-An intelligent code review system that combines static analysis, semantic retrieval, and LLM-powered remediation to detect bugs, explain risks, and suggest fixes for Python code.
+**An intelligent code review system that combines static analysis, semantic retrieval, and LLM-powered remediation to detect bugs, explain risks, and suggest fixes for Python code.**
 
-📌 Overview
+---
 
-SmartCode Auditor is an AI-powered code review agent built to analyze Python code beyond simple keyword matching.
+## 📌 **Overview**
+
+**SmartCode Auditor** is an AI-powered code review agent built to analyze Python code beyond simple keyword matching.
 
 Instead of only checking for hardcoded patterns, it combines:
 
-🌳 AST-based static code analysis
-
-🧠 Code embeddings using CodeBERT
-
-🔎 Vector similarity search with ChromaDB
-
-🤖 LLM-generated fix suggestions and explanations
-
-🖥️ Interactive Streamlit UI
+- 🌳 **AST-based static code analysis**
+- 🧠 **Code embeddings using CodeBERT**
+- 🔎 **Vector similarity search with ChromaDB**
+- 🤖 **LLM-generated fix suggestions and explanations**
+- 🖥️ **Interactive Streamlit UI**
 
 The goal of this project is to simulate a real-world AI code review assistant that can:
 
-understand code structure,
+- **understand code structure**
+- **detect risky patterns**
+- **retrieve similar bug examples**
+- **generate human-readable fixes with explanations**
 
-detect risky patterns,
+---
 
-retrieve similar bug examples,
+## ✨ **Why This Project?**
 
-and generate human-readable fixes with explanations.
+Modern software teams need tools that do more than just say **“this is wrong.”**
 
-✨ Why This Project?
-
-Modern software teams need tools that do more than just say “this is wrong.”
 They need systems that can also answer:
 
-Why is this risky?
-
-How can I fix it?
-
-What similar issue does this resemble?
-
-What best practice should I follow instead?
+- ❓ **Why is this risky?**
+- 🛠️ **How can I fix it?**
+- 🔍 **What similar issue does this resemble?**
+- ✅ **What best practice should I follow instead?**
 
 This project was built to solve exactly that problem.
 
 It demonstrates how AI can be combined with software engineering techniques to create a smart code review pipeline that is useful for:
 
-secure coding assistance,
+- 🔐 **Secure coding assistance**
+- ⚡ **Developer productivity**
+- 🎯 **Interview-worthy AI engineering demonstration**
+- 🧾 **Explainable bug remediation**
 
-developer productivity,
+---
 
-interview-worthy AI engineering demonstration,
+## 🧠 **Core Features**
 
-and explainable bug remediation.
+### 🌳 **1. AST-Based Code Parsing**
+Parses Python code into an **Abstract Syntax Tree (AST)** to understand structure such as:
 
-🧠 Core Features
-🌳 1. AST-Based Code Parsing
+- **functions**
+- **variables**
+- **imports**
+- **loops**
+- **control flow patterns**
 
-Parses Python code into an Abstract Syntax Tree (AST) to understand structure such as:
-
-functions
-
-variables
-
-imports
-
-loops
-
-control flow patterns
-
-🐛 2. Rule-Based + AST-Based Bug Detection
-
+### 🐛 **2. Rule-Based + AST-Based Bug Detection**
 Detects risky patterns like:
 
-eval() usage
+- **`eval()` usage**
+- **bare `except:`**
+- **possible infinite loops**
+- **unsafe coding constructs**
 
-bare except:
+### 🔗 **3. Code Embeddings with CodeBERT**
+Converts code snippets into dense vector embeddings using **CodeBERT**, allowing the system to understand semantic similarity between code patterns.
 
-possible infinite loops
-
-unsafe coding constructs
-
-🔗 3. Code Embeddings with CodeBERT
-
-Converts code snippets into dense vector embeddings using CodeBERT, allowing the system to understand semantic similarity between code patterns.
-
-🗂️ 4. Vector Search with ChromaDB
-
+### 🗂️ **4. Vector Search with ChromaDB**
 Stores known buggy code patterns and retrieves the most similar matches using vector similarity search.
 
-🤖 5. AI Fix Suggestion Engine
-
+### 🤖 **5. AI Fix Suggestion Engine**
 Uses an LLM to:
 
-explain the bug,
+- **explain the bug**
+- **generate a safer fix**
+- **suggest best practices**
 
-generate a safer fix,
-
-suggest best practices.
-
-🖥️ 6. Streamlit User Interface
-
+### 🖥️ **6. Streamlit User Interface**
 Provides a clean UI where users can:
 
-paste Python code,
+- **paste Python code**
+- click **Analyze**
+- **view detected bugs**
+- **inspect similar known patterns**
+- **get AI-generated remediation**
 
-click Analyze,
+---
 
-view detected bugs,
+## 🏗️ **System Architecture**
 
-inspect similar known patterns,
-
-get AI-generated remediation.
-
-🏗️ System Architecture
+```text
 User Input (Streamlit UI)
         ↓
 AST Parsing & Structural Analysis
@@ -126,25 +106,27 @@ Vector Similarity Search (ChromaDB)
 LLM-Based Explanation + Fix Generation
         ↓
 User-Friendly Output (Bug + Severity + Fix + Explanation)
-⚙️ Tech Stack
 
-Python
 
-Streamlit
+## ⚙️ **Tech Stack**
 
-AST (Abstract Syntax Tree)
+🐍 Python
 
-Transformers / CodeBERT
+🖥️ Streamlit
 
-ChromaDB
+🌳 AST (Abstract Syntax Tree)
 
-NumPy / Pandas
+🤗 Transformers / CodeBERT
 
-scikit-learn
+🧠 ChromaDB
 
-Groq API / LLM integration
+🔢 NumPy / Pandas
 
-📂 Project Structure
+📊 scikit-learn
+
+⚡ Groq API / LLM integration
+
+## 📂 Project Structure
 SmartCodeAuditor/
 │
 ├── app/
@@ -172,7 +154,7 @@ The user pastes code into the Streamlit interface.
 
 2️⃣ AST analyzer parses the code
 
-The code is converted into an AST so the system can understand structure.
+The code is converted into an AST so the system can understand its structure.
 
 3️⃣ Bug detector checks risky patterns
 
@@ -190,23 +172,23 @@ The system searches a vector database of known buggy code examples and retrieves
 
 The retrieved context and detected bug information are passed to the LLM, which produces:
 
-explanation,
+explanation
 
-corrected code,
+corrected code
 
-best-practice guidance.
+best-practice guidance
 
 7️⃣ Results are shown in the UI
 
 The user sees a full analysis pipeline output in an easy-to-read format.
 
-🎯 Example Use Case
+##🎯 Example Use Case
 Input
 x = 5
 eval(input())
 Output
 
-Bug Detected: Unsafe eval usage
+Bug Detected: Unsafe eval() usage
 
 Severity: Critical
 
@@ -250,19 +232,19 @@ Developer Tools / AI Agents
 
 Code Intelligence Systems
 
-📈 Real-World Relevance
+##📈 Real-World Relevance
 
 SmartCode Auditor can be extended into:
 
-a GitHub PR review bot,
+a GitHub PR review bot
 
-a VS Code extension,
+a VS Code extension
 
-a CI/CD code quality gate,
+a CI/CD code quality gate
 
-a secure code assistant,
+a secure code assistant
 
-or an enterprise developer productivity tool.
+an enterprise developer productivity tool
 
 🧪 Current Detection Examples
 
@@ -278,11 +260,11 @@ retrieval of related bug patterns from vector storage
 
 AI-generated explanations and fixes
 
-🚀 Getting Started
+##🚀 Getting Started
 1. Clone the repository
-git clone https://github.com/your-username/SmartCodeAuditor.git
+git clone https://github.com/hprady/SmartCodeAuditor.git
 cd SmartCodeAuditor
-2. Create virtual environment
+2. Create a virtual environment
 python -m venv .venv
 source .venv/bin/activate
 
@@ -296,11 +278,17 @@ pip install -r requirements.txt
 For Groq:
 
 export GROQ_API_KEY="your_key_here"
+
+For Windows PowerShell:
+
+$env:GROQ_API_KEY="your_key_here"
 5. Run the test pipeline
 python src/test_analyzer.py
-6. Launch Streamlit app
+6. Launch the Streamlit app
 streamlit run app/streamlit_app.py
-🛡️ Key Engineering Learnings
+
+
+##🛡️ Key Engineering Learnings
 
 This project highlights several real-world engineering challenges:
 
@@ -316,7 +304,7 @@ keeping secrets secure with environment variables
 
 turning raw backend pipelines into user-facing tools
 
-📌 Future Improvements
+##📌 Future Improvements
 
 🔥 Severity classification using ML models
 
@@ -334,10 +322,10 @@ turning raw backend pipelines into user-facing tools
 
 🧠 Multi-language support beyond Python
 
-👨‍💻 Author
+##👨‍💻 Author
 
 Built as an AI engineering portfolio project to explore how program analysis + semantic retrieval + generative AI can work together in a practical code review assistant.
 
-⭐ If you found this project interesting...
+##⭐ If You Found This Project Interesting...
 
 Give it a star and connect if you’d like to discuss AI engineering, developer tools, or intelligent code analysis.
