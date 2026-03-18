@@ -4,5 +4,6 @@ transformers
 chromadb
 pandas
 numpy
+groq
+requests
 torch
-joblib
