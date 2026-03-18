@@ -168,106 +168,14 @@ SmartCodeAuditor/
 
 ---
 
-## 🎯 Example Use Case
+## 🎯 **Example Use Case**
 
-### 🔹 Input
+### **Input**
+
 ```python
 x = 5
-eval(input())
 
-🔹 Output
-
-🚨 Bug Detected: Unsafe eval() usage
-🔴 Severity: Critical
-🔍 Similar Pattern: eval(user_input) in dataset #42
-🛠️ Suggested Fix: 
-   Use ast.literal_eval() or validate input against allowlist
-
-💡 Explanation: 
-   eval() executes arbitrary code and can introduce major 
-   security risks like remote code execution (RCE).
-
-
-
-⚙️ Tech Stack
-
-🐍 Python
-
-🖥️ Streamlit
-
-🌳 AST (Abstract Syntax Tree)
-
-🤗 Transformers / CodeBERT
-
-🧠 ChromaDB
-
-🔢 NumPy / Pandas
-
-📊 scikit-learn
-
-⚡ Groq API / LLM integration
-
-📂 Project Structure
-SmartCodeAuditor/
-│
-├── app/
-│   └── streamlit_app.py
-│
-├── src/
-│   ├── ast_analyzer.py
-│   ├── bug_detector.py
-│   ├── embedding_engine.py
-│   ├── vector_search.py
-│   ├── fix_generator.py
-│   └── test_analyzer.py
-│
-├── data/
-├── models/
-├── embeddings/
-│
-├── requirements.txt
-├── .gitignore
-└── README.md
-🔍 How It Works
-1️⃣ User submits Python code
-
-The user pastes code into the Streamlit interface.
-
-2️⃣ AST analyzer parses the code
-
-The code is converted into an AST so the system can understand its structure.
-
-3️⃣ Bug detector checks risky patterns
-
-Rule-based and AST-based checks identify likely issues such as unsafe eval() or bare exceptions.
-
-4️⃣ Embedding engine converts code into vectors
-
-The snippet is transformed into a semantic representation using CodeBERT.
-
-5️⃣ Vector database retrieves similar bug patterns
-
-The system searches a vector database of known buggy code examples and retrieves related issues and fixes.
-
-6️⃣ LLM generates explanation and remediation
-
-The retrieved context and detected bug information are passed to the LLM, which produces:
-
-explanation
-
-corrected code
-
-best-practice guidance
-
-7️⃣ Results are shown in the UI
-
-The user sees a full analysis pipeline output in an easy-to-read format.
-
-🎯 Example Use Case
-Input
-x = 5
-eval(input())
-Output
+**Output**
 
 Bug Detected: Unsafe eval() usage
 
@@ -278,8 +186,10 @@ Similar Bug Pattern: eval(user_input)
 Suggested Fix: Use ast.literal_eval() or safer input validation
 
 Explanation: eval() executes arbitrary code and can introduce major security risks
+eval(input())
+Give it a star and connect if you’d like to discuss AI engineering, developer tools, or intelligent code analysis.
 
-💡 Why This Project Stands Out
+### 💡 **Why This Project Stands Out**
 
 This is not just a basic rule-based checker.
 
@@ -312,99 +222,3 @@ Applied AI
 Developer Tools / AI Agents
 
 Code Intelligence Systems
-
-📈 Real-World Relevance
-
-SmartCode Auditor can be extended into:
-
-a GitHub PR review bot
-
-a VS Code extension
-
-a CI/CD code quality gate
-
-a secure code assistant
-
-an enterprise developer productivity tool
-
-🧪 Current Detection Examples
-
-The project currently demonstrates detection or partial handling of patterns such as:
-
-unsafe eval() usage
-
-bare except:
-
-possible infinite loops
-
-retrieval of related bug patterns from vector storage
-
-AI-generated explanations and fixes
-
-🚀 Getting Started
-1. Clone the repository
-git clone https://github.com/hprady/SmartCodeAuditor.git
-cd SmartCodeAuditor
-2. Create a virtual environment
-python -m venv .venv
-source .venv/bin/activate
-
-For Windows PowerShell:
-
-.venv\Scripts\activate
-3. Install dependencies
-pip install -r requirements.txt
-4. Set your API key
-
-For Groq:
-
-export GROQ_API_KEY="your_key_here"
-
-For Windows PowerShell:
-
-$env:GROQ_API_KEY="your_key_here"
-5. Run the test pipeline
-python src/test_analyzer.py
-6. Launch the Streamlit app
-streamlit run app/streamlit_app.py
-🛡️ Key Engineering Learnings
-
-This project highlights several real-world engineering challenges:
-
-embedding shape handling for vector databases
-
-API integration and provider switching
-
-model deprecations and endpoint changes
-
-fallback handling for LLM service failures
-
-keeping secrets secure with environment variables
-
-turning raw backend pipelines into user-facing tools
-
-📌 Future Improvements
-
-🔥 Severity classification using ML models
-
-📁 Upload .py file support in Streamlit
-
-🧪 Larger labeled bug dataset
-
-🧩 GitHub pull request integration
-
-🛠️ More advanced static analysis rules
-
-📊 Better similarity scoring visualization
-
-🔐 Detection of SQL injection / command injection
-
-🧠 Multi-language support beyond Python
-
-👨‍💻 Author
-
-Built as an AI engineering portfolio project to explore how program analysis + semantic retrieval + generative AI can work together in a practical code review assistant.
-
-⭐ If You Found This Project Interesting...
-
-Give it a star and connect if you’d like to discuss AI engineering, developer tools, or intelligent code analysis.
